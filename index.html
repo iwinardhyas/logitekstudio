@@ -2,6 +2,14 @@
 <html lang="id">
   <head>
     <meta charset="UTF-8" />
+    <script>
+      // QR laporan Otopantau lama (logitekstudio.my.id/otopantau/r/<kode>) → subdomain verifikasi.
+      // Halaman ini juga dipakai sebagai 404.html, jadi semua path /otopantau/* lewat sini.
+      (function () {
+        var m = location.pathname.match(/^\/otopantau(\/.*)?$/);
+        if (m) location.replace('https://otopantau.logitekstudio.my.id' + (m[1] || '/') + location.search + location.hash);
+      })();
+    </script>
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png" />
